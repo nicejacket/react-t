@@ -1,0 +1,33 @@
+{
+  "name": "react-t",
+  "version": "1.0.0",
+  "description": "tesla react version",
+  "main": "index.js",
+  "scripts": {
+    "server": "webpack-dev-server --progress --colors",
+    "build": "webpack --progress --profile --colors --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nicejacket/react-t"
+  },
+  "keywords": [
+    "tesla",
+    "react"
+  ],
+  "author": "zhou_xg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicejacket/react-t/issues"
+  },
+  "homepage": "https://github.com/nicejacket/react-t",
+  "devDependencies": {
+    "babel-core": "^6.1.21",
+    "babel-loader": "^6.2.0",
+    "karma-sourcemap-loader": "^0.3.6",
+    "karma-webpack": "^1.7.0",
+    "webpack": "^1.12.6",
+    "webpack-dev-server": "^1.12.1"
+  }
+}

@@ -1,1 +1,1 @@
-# react-t
+`npm install`
