@@ -4,4 +4,4 @@
  * @version 1.0.0
  */
 
-document.write("It works.");
+import Hello from './hello.jsx'
