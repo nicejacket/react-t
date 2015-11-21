@@ -4,4 +4,4 @@
  * @version 1.0.0
  */
 
-import Hello from './hello.jsx'
+import Hello from './hello'
