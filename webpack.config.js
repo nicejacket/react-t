@@ -3,6 +3,10 @@
  * @date    2015-11-18 18:49:44
  * @version 1.0.0
  */
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require('path');
+
+require('es6-promise').polyfill();
 
 module.exports = {
     entry: "./src/js/index.js",
@@ -12,12 +16,17 @@ module.exports = {
     },
     module: {
         loaders: [{
-            test: /\.css$/,
-            loader: "style!css"
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract('css!sass')
         }, {
             test: /\.jsx?$/,
             exclude: /node_modules/,
             loader: "babel-loader"
         }]
-    }
+    },
+    plugins: [
+        new ExtractTextPlugin('style.css', {
+            allChunks: true
+        })
+    ]
 };
