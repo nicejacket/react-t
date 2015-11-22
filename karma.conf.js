@@ -4,40 +4,49 @@
  * @version 1.0.0
  */
 
-module.exports = function(config) {
-    config.set({
-        // ... normal karma configuration
+var ExtractTextPlugin = require('extract-text-webpack-plugin'),
+    webpack = require('webpack'),
+    path = require('path');
 
-        files: [
-            // all files ending in "_test"
-            'test/*_test.js',
-            'test/**/*_test.js'
-            // each file acts as entry point for the webpack configuration
-        ],
+require('es6-promise').polyfill();
 
-        preprocessors: {
-            // add webpack as preprocessor
-            'test/*_test.js': ['webpack'],
-            'test/**/*_test.js': ['webpack']
-        },
-
-        webpack: {
-            // karma watches the test entry points
-            // (you don't need to specify the entry option)
-            // webpack watches dependencies
-
-            // webpack configuration
-        },
-
-        webpackMiddleware: {
-            // webpack-dev-middleware configuration
-            // i. e.
-            noInfo: true
-        },
-
-        plugins: [
-            require("karma-webpack")
-        ]
-
-    });
+module.exports = function (config) {
+  config.set({
+    browsers: [ 'Chrome' ], //run in Chrome
+    frameworks: ['mocha'], //use the mocha test framework
+    files: [
+      'test/*.test.js' //just load this file
+    ],
+    preprocessors: {
+      'tests/*.test.js': ['webpack'] //preprocess with webpack and our sourcemap loader
+    },
+    reporters: [ 'dots' ], //report results in this format
+    webpack: {
+      module: {
+          loaders: [{
+              test: /\.scss$/,
+              loader: ExtractTextPlugin.extract('css!sass')
+          }, {
+              test: /\.js$/,
+              exclude: /node_modules/,
+              loader: "babel-loader"
+          }]
+      },
+      plugins: [
+          new ExtractTextPlugin('style.css', {
+              allChunks: true
+          })
+      ]
+    },
+    webpackMiddleware: {
+      noInfo: true
+    },
+    singleRun: false,
+    plugins: [
+      'karma-mocha',
+      'karma-phantomjs-launcher',
+      'karma-chrome-launcher',
+      'karma-webpack'
+    ]
+  });
 };

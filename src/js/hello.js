@@ -5,7 +5,7 @@
  * @version $Id$
  */
 
-require('../sass/hello.scss');
+import '../sass/hello.scss';
 import React from 'react';
 
 class Hello extends React.Component{
@@ -14,4 +14,5 @@ class Hello extends React.Component{
 	}
 }
 
+export default Hello
 React.render(<Hello/>, document.getElementById("hello"))

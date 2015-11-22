@@ -19,7 +19,7 @@ module.exports = {
             test: /\.scss$/,
             loader: ExtractTextPlugin.extract('css!sass')
         }, {
-            test: /\.jsx?$/,
+            test: /\.js$/,
             exclude: /node_modules/,
             loader: "babel-loader"
         }]
