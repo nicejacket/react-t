@@ -4,49 +4,38 @@
  * @version 1.0.0
  */
 
-var ExtractTextPlugin = require('extract-text-webpack-plugin'),
-    webpack = require('webpack'),
-    path = require('path');
+var webpack = require('webpack'),
+    webpackConfig = require('./webpack.config.js');
 
-require('es6-promise').polyfill();
+webpackConfig.devtool = 'inline-source-map';
 
 module.exports = function (config) {
   config.set({
-    browsers: [ 'Chrome' ], //run in Chrome
-    frameworks: ['mocha'], //use the mocha test framework
+    browsers: [ 'Chrome', 'PhantomJS'], //run in Chrome
+    frameworks: ['chai', 'mocha'], //use the mocha test framework
     files: [
-      'test/*.test.js' //just load this file
+      'test/tests.bundle.js' //just load this file
     ],
     preprocessors: {
-      'tests/*.test.js': ['webpack'] //preprocess with webpack and our sourcemap loader
+      'test/tests.bundle.js': [ 'webpack', 'sourcemap' ]
     },
-    reporters: [ 'dots' ], //report results in this format
-    webpack: {
-      module: {
-          loaders: [{
-              test: /\.scss$/,
-              loader: ExtractTextPlugin.extract('css!sass')
-          }, {
-              test: /\.js$/,
-              exclude: /node_modules/,
-              loader: "babel-loader"
-          }]
-      },
-      plugins: [
-          new ExtractTextPlugin('style.css', {
-              allChunks: true
-          })
-      ]
-    },
+    reporters: [ 'mocha' ], //report results in this format
+    webpack: webpackConfig,
     webpackMiddleware: {
       noInfo: true
     },
-    singleRun: false,
+    singleRun: true,
+    port: 9876,
+    colors: true,
+    logLevel: config.LOG_INFO,
     plugins: [
-      'karma-mocha',
-      'karma-phantomjs-launcher',
+      'mocha',
       'karma-chrome-launcher',
-      'karma-webpack'
+      'karma-phantomjs-launcher',
+      'karma-chai',
+      'karma-mocha',
+      'karma-sourcemap-loader',
+      'karma-webpack',
     ]
   });
 };
