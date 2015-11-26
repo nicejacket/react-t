@@ -8,7 +8,6 @@
 import '../sass/hello.scss';
 import React from 'react';
 import Reflux from 'reflux';
-//import ReactDOM from 'react-dom';
 
 let HelloActions = Reflux.createActions(['init']);
 let HelloStore = Reflux.createStore({
@@ -27,9 +26,7 @@ let Hello = React.createClass({
 	},
 	changeText: function(e){
 		e.preventDefault();
-		console.log(this.refs.text);
-		//let text = this.refs.text.value;
-		HelloActions.init("..." + this.refs.text.value);
+		HelloActions.init(this.refs.text.value);
 	},
 	render: function() {
 		return (
