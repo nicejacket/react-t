@@ -8,7 +8,7 @@
 import '../sass/hello.scss';
 import React from 'react';
 import Reflux from 'reflux';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 
 let HelloActions = Reflux.createActions(['init']);
 let HelloStore = Reflux.createStore({
