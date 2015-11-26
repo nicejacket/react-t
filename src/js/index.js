@@ -4,4 +4,7 @@
  * @version 1.0.0
  */
 
-import Hello from './hello'
+import Hello from './hello';
+import React from 'react';
+
+React.render(<Hello></Hello> , document.getElementById('hello'));

@@ -7,12 +7,39 @@
 
 import '../sass/hello.scss';
 import React from 'react';
+import Reflux from 'reflux';
+import ReactDOM from 'react-dom';
 
-class Hello extends React.Component{
-	render() {
-		return <h1>Hello World!</h1>
+let HelloActions = Reflux.createActions(['init']);
+let HelloStore = Reflux.createStore({
+	listenables : HelloActions,
+	onInit : function(state) {
+		this.trigger(state);
 	}
-}
+});
 
-export default Hello
-React.render(<Hello/>, document.getElementById("hello"))
+let Hello = React.createClass({
+	mixins: [Reflux.connect(HelloStore, 'text')],
+	getInitialState: function() {
+		return {
+			text : "Hello!"
+		};
+	},
+	changeText: function(e){
+		e.preventDefault();
+		console.log(this.refs.text);
+		//let text = this.refs.text.value;
+		HelloActions.init("..." + this.refs.text.value);
+	},
+	render: function() {
+		return (
+			<div>
+				<h1>{this.state.text}</h1>
+				<input type="text" name="text" ref="text"/>
+				<button type="button" onClick={this.changeText}>hello</button>
+			</div>
+		);
+	}
+});
+
+export default Hello;
