@@ -15,6 +15,11 @@ module.exports = {
         filename: "bundle.js"
     },
     module: {
+        preLoaders: [{
+            test: /\.jsx?$/, 
+            exclude: /node_modules/, 
+            loader: "eslint-loader"
+        }],
         loaders: [{
             test: /\.scss$/,
             loader: ExtractTextPlugin.extract('css!sass')
@@ -28,5 +33,8 @@ module.exports = {
         new ExtractTextPlugin('style.css', {
             allChunks: true
         })
-    ]
+    ],
+    eslint: {  
+        configFile: '.eslintrc'
+    }
 };

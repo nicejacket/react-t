@@ -5,6 +5,14 @@
  */
 
 import Hello from './hello';
+import App from './app.js';
 import React from 'react';
+import {Router, Route} from 'react-router';
 
-React.render(<Hello></Hello> , document.getElementById('hello'));
+React.render((
+  <Router>
+    <Route path="/" component={App}>
+        <Route path="messages/:id" component={Hello} />
+    </Route>
+  </Router>
+), document.getElementById('hello'));
