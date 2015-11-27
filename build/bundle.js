@@ -21139,7 +21139,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 
 	__webpack_require__(2);
@@ -21157,20 +21157,20 @@
 	 */
 
 	var App = _react2.default.createClass({
-	    displayName: 'App',
-	    render: function render() {
-	        return _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement(
-	                'h1',
-	                null,
-	                'App'
-	            ),
-	            _react2.default.createElement('ul', null),
-	            this.props.children
-	        );
-	    }
+	  displayName: 'App',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        'App'
+	      ),
+	      _react2.default.createElement('ul', null),
+	      this.props.children
+	    );
+	  }
 	});
 
 	exports.default = App;

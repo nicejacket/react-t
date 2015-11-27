@@ -11,23 +11,23 @@ import Reflux from 'reflux';
 let HelloActions = Reflux.createActions(['init']);
 let HelloStore = Reflux.createStore({
 	listenables: HelloActions,
-	onInit: function(state) {
+	onInit(state) {
 		this.trigger(state);
 	}
 });
 
 let Hello = React.createClass({
 	mixins: [Reflux.connect(HelloStore, 'text')],
-	getInitialState: function() {
+	getInitialState() {
 		return {
 			text: 'Hello!'
 		};
 	},
-	changeText: function(e) {
+	changeText(e) {
 		e.preventDefault();
 		HelloActions.init(this.refs.text.value);
 	},
-	render: function() {
+	render() {
 		return (
 			<div>
 				<h1>{this.state.text}</h1>

@@ -7,13 +7,13 @@ import '../sass/hello.scss';
 import React from 'react';
 
 const App = React.createClass({
-    render() {
-        return (
+	render() {
+		return (
           <div>
             <h1>App</h1>
             <ul></ul>{this.props.children}</div>
         );
-    }
+	}
 });
 
 export default App;
