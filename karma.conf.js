@@ -11,15 +11,19 @@ webpackConfig.devtool = 'inline-source-map';
 
 module.exports = function (config) {
   config.set({
-    browsers: [ 'Chrome', 'PhantomJS'], //run in Chrome
-    frameworks: ['chai', 'mocha'], //use the mocha test framework
+    browsers: [ 'Chrome'], //run in Chrome
+    frameworks: ['mocha', 'chai'], //use the mocha test framework
     files: [
-      'test/tests.bundle.js' //just load this file
+      'test/test.bundle.js' //just load this file
     ],
     preprocessors: {
-      'test/tests.bundle.js': [ 'webpack', 'sourcemap' ]
+      'test/test.bundle.js': [ 'webpack', 'sourcemap' ]
     },
-    reporters: [ 'mocha' ], //report results in this format
+    reporters: [ 'mocha', 'coverage'], //report results in this format
+    coverageReporter: {
+      type: 'html',
+      dir: 'build/coverage/'
+    },
     webpack: webpackConfig,
     webpackMiddleware: {
       noInfo: true
@@ -27,15 +31,16 @@ module.exports = function (config) {
     singleRun: true,
     port: 9876,
     colors: true,
-    logLevel: config.LOG_INFO,
     plugins: [
-      'mocha',
-      'karma-chrome-launcher',
-      'karma-phantomjs-launcher',
-      'karma-chai',
-      'karma-mocha',
-      'karma-sourcemap-loader',
-      'karma-webpack',
+      require("mocha"),
+      require('karma-chrome-launcher'),
+      require('karma-phantomjs-launcher'),
+      require('karma-chai'),
+      require('karma-mocha'),
+      require('karma-coverage'),
+      require('karma-sourcemap-loader'),
+      require('karma-webpack'),
+      require('karma-mocha-reporter')
     ]
   });
 };
