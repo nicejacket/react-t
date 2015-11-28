@@ -11,20 +11,36 @@ import '../../../sass/_panel.scss';
 let Panel = React.createClass({
 	propTypes: {
 		title: React.PropTypes.string,
-		onClose: React.PropTypes.func
+		closeable: React.PropTypes.bool
+	},
+	getInitialState() {
+		return {
+			showPanel: true
+		};
+	},
+	closePanel() {
+		this.setState({showPanel: false});
 	},
 	render() {
-		return (
-			<div className="panel">
-				<div className="title">
-					{this.props.title}
-					{(() => this.props.onClose ? <i className="fa fa-remove right" onClick={this.props.onClose}></i> : '')()}
+		let _view;
+
+		if (this.state.showPanel) {
+			_view = (
+				<div className="panel">
+					<div className="title">
+						{this.props.title}
+						{(() => this.props.closeable ? <i className="fa fa-remove right" onClick={this.closePanel}></i> : '')()}
+					</div>
+					<div className="content">
+						{this.props.children}
+					</div>
 				</div>
-				<div className="content">
-					{this.props.children}
-				</div>
-			</div>
-		);
+			);
+		} else {
+			_view = (<div></div>);
+		}
+
+		return _view;
 	}
 });
 

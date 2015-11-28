@@ -5,14 +5,14 @@
  */
 import '../sass/hello.scss';
 import React from 'react';
-import Panel from './tesla/components/CloseablePanel';
+import Panel from './tesla/components/Panel';
 
 const App = React.createClass({
 	render() {
 		return (
 			<div>
 				<h1>App</h1>
-				<Panel title="this is a title!">
+				<Panel title="this is a title!" closeable>
 					<div>这是panel的内容</div>
 				</Panel>
 				{this.props.children}
