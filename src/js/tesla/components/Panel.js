@@ -37,7 +37,7 @@ let Panel = React.createClass({
 				</div>
 			);
 		} else {
-			_view = (<div></div>);
+			_view = (<span></span>);
 		}
 
 		return _view;
