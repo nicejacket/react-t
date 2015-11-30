@@ -5,17 +5,24 @@
  */
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
+var webpack = require('webpack');
 
 require('es6-promise').polyfill();
 
 module.exports = {
-    entry: [
-        "font-awesome-webpack!./font-awesome.config.js",
-        "./src/js/index.js"
-    ],
+    entry: {
+        bundle:[
+            './src/js/index.js',
+            'font-awesome-webpack!./font-awesome.config.js'
+        ] ,
+        html5shiv: './node_modules/html5shiv/src/html5shiv.js',
+        'html5shiv-printshiv': './node_modules/html5shiv/src/html5shiv-printshiv.js',
+        'es5-shim': './node_modules/es5-shim/es5-shim.js',
+        'es5-sham': './node_modules/es5-shim/es5-sham.js'
+    },
     output: {
         path: "build",
-        filename: "bundle.js"
+        filename: "[name].js"
     },
     module: {
         preLoaders: [{
