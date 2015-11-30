@@ -21,7 +21,7 @@ module.exports = function(config) {
         },
         reporters: ['mocha', 'coverage'], //report results in this format
         mochaReporter: {
-            utput: 'autowatch'
+            output: 'autowatch'
         },
         coverageReporter: {
             dir: 'build/coverage/',
