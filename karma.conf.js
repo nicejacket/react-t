@@ -36,13 +36,10 @@ module.exports = function(config) {
         colors: true,
         plugins: [
             require('mocha'),
-            require('phantomjs'),
             require('karma-chrome-launcher'),
-            require('karma-phantomjs-launcher'),
             require('karma-chai'),
             require('karma-mocha'),
             require('karma-coverage'),
-            require('karma-spec-reporter'),
             require('karma-mocha-reporter'),
             require('karma-sourcemap-loader'),
             require('karma-webpack')
