@@ -17,4 +17,11 @@ describe('Panel', () => {
 		);
 		assert.ok(ReactTestUtils.findRenderedDOMComponentWithTag(instance, 'strong'));
 	});
+
+	it('测试关闭按钮', () => {
+		let instance = ReactTestUtils.renderIntoDocument(
+			<Panel title="this is a title" closeable/>		
+		);
+		assert.ok(ReactTestUtils.findRenderedDOMComponentWithTag(instance, 'i'));
+	});
 });

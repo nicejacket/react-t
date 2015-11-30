@@ -21,7 +21,7 @@ module.exports = function(config) {
         },
         reporters: ['mocha', 'coverage'], //report results in this format
         mochaReporter: {
-            utput: 'autowatch'
+            output: 'autowatch'
         },
         coverageReporter: {
             dir: 'build/coverage/',
@@ -36,13 +36,10 @@ module.exports = function(config) {
         colors: true,
         plugins: [
             require('mocha'),
-            require('phantomjs'),
             require('karma-chrome-launcher'),
-            require('karma-phantomjs-launcher'),
             require('karma-chai'),
             require('karma-mocha'),
             require('karma-coverage'),
-            require('karma-spec-reporter'),
             require('karma-mocha-reporter'),
             require('karma-sourcemap-loader'),
             require('karma-webpack')
