@@ -5,16 +5,30 @@
  */
 import '../sass/hello.scss';
 import React from 'react';
-import Panel from './tesla/components/Panel';
+import Hello from './hello.js';
 
-const App = React.createClass({
+let App = React.createClass({
+	getInitialState() {
+		return {
+			component: <Hello/>
+		};
+	},
+	loadPanel() {
+		require.ensure([], () => {
+			let Panel = require('./tesla/components/Panel').default;
+			this.setState({
+				component: (<Panel title="this is a title" closeable>
+						<div>this is content!</div>
+					</Panel>)
+			});
+		});
+	},
 	render() {
 		return (
 			<div>
 				<h1>App</h1>
-				<Panel title="this is a title!" closeable>
-					<div>这是panel的内容</div>
-				</Panel>
+				<button onClick={this.loadPanel}>test</button>
+				{this.state.component}
 				{this.props.children}
 			</div>
 		);

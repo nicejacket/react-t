@@ -4,7 +4,7 @@
   "description": "tesla react version",
   "main": "index.js",
   "scripts": {
-    "server": "webpack-dev-server --progress --colors",
+    "server": "webpack-dev-server --progress --colors --hot",
     "build": "webpack --progress --profile --colors --display-error-details && gulp",
     "gulp": "gulp",
     "test": "karma start"
