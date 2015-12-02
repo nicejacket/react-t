@@ -29,6 +29,7 @@
     "react/jsx-boolean-value": 2,
     "react/jsx-no-duplicate-props": 2,
     "react/sort-comp": 0,
+    "react/react-in-jsx-scope": 1,
     "func-names":2,
     "react/prop-types": [2, { "ignore": [
         "children",
