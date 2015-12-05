@@ -9,7 +9,7 @@ import React from 'react';
 export class Tab extends React.Component{
 	render() {
 		<ul class="tab">
-
+			
 		</ul>
 	}
 };

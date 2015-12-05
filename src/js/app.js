@@ -16,9 +16,10 @@ let App = React.createClass({
 	loadPanel() {
 		require.ensure([], () => {
 			let Panel = require('./tesla/components/Panel').default;
+			let Toggle = require('./tesla/components/Toggle').default;
 			this.setState({
 				component: (<Panel title="this is a title" closeable>
-						<div>this is content!</div>
+						<div>this is content!<Toggle name="ischecked"/></div>
 					</Panel>)
 			});
 		});

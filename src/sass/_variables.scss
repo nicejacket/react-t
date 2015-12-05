@@ -1,0 +1,23 @@
+$default-primariy-color: #0099ee;
+$default-disabled-color: #ccc;
+$default-background-color: $default-primariy-color;
+$default-border-color: #DDD;
+$default-font-color-with-background: #FFF;
+$default-font-color: #000;
+$default-title-font-size: 16px;
+$default-font-size: 13px;
+
+$color-red:#e51c23;
+$color-green:#259b24;
+
+
+//toggle variables
+$default-toggle-width: 70px;
+$default-toggle-height: 30px;
+$default-toggle-on-color: $default-primariy-color;
+$default-toggle-off-color: $default-disabled-color;
+$default-toggle-font-size: 20px;
+$default-toggle-on-font-color: $default-font-color-with-background;
+$default-toggle-off-font-color: $default-font-color-with-background;
+$default-toggle-handle-size: $default-toggle-height - 2;
+$default-toggle-handle-color: #FFF;

@@ -1,0 +1,95 @@
+@import 'variables';
+@import 'transition';
+
+label.toggle {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	padding: 0;	
+	cursor: pointer;
+}
+
+label.toggle input[type="checkbox"] {
+	display: none;
+}
+
+label.toggle input[type="checkbox"]:checked + .track {
+	background-color: $default-toggle-on-color;
+	border-color: $default-toggle-on-color;
+}
+
+label.toggle input[type="checkbox"]:checked + .track {
+	.on {
+		opacity: 1;
+	}
+
+	.off {
+		opacity: 0;
+	}
+
+	.handle {
+		left: $default-toggle-width - $default-toggle-height + 1;
+	}
+}
+
+label.toggle .track .handle {
+	position: absolute;
+	left: 1px;
+	display: block;
+	@include transition-property(left);
+	@include transition-duration(0.2s);
+	@include transition-timing-function(ease-in-out);
+	height: $default-toggle-handle-size;
+	width: $default-toggle-handle-size;
+	border-radius: $default-toggle-handle-size;
+	background-color: $default-toggle-handle-color;
+	border-color: $default-toggle-handle-color;
+}
+
+label.toggle .track {
+	@include transition-property(background-color, color);
+	@include transition-duration(0.2s);
+	@include transition-timing-function(ease-in-out);
+	display: inline-block;
+	box-sizing: border-box;
+	width: $default-toggle-width;
+	height: $default-toggle-height;
+	background-color: $default-toggle-off-color;
+	border: solid 1px $default-toggle-off-color;
+	border-radius: $default-toggle-height - 2;
+	content: ' ';
+	cursor: pointer;
+	pointer-events: none;
+}
+
+label.toggle .track {
+	.label {
+		@include transition-property(opacity);
+		@include transition-duration(0.2s);
+		@include transition-timing-function(ease-in-out);
+		position: absolute;
+		font-size: $default-toggle-font-size;
+	}
+
+	.on {
+		left: 5px;
+		top: 2px;
+		opacity: 0;
+		color: $default-toggle-on-font-color;
+	}
+
+	.off {
+		right: 5px;
+		top: 3px;
+		opacity: 1;
+		color: $default-toggle-off-font-color;
+	}
+
+	.handle:before{
+	    position: absolute;
+	    top: -4px;
+	    left: ( ($default-toggle-handle-size / 2) * -1) - 8;
+	    padding: ($default-toggle-handle-size / 2) + 5 ($default-toggle-handle-size + 7);
+	    content: " ";
+	}
+}

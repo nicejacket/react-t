@@ -1,19 +1,19 @@
-@import 'var';
+@import 'variables';
 
 div.panel {
-    border: 1px solid $borderColor;
+    border: 1px solid $default-border-color;
     width: 100%;
     height: 100%;
     padding: 0;
     margin: 0;
 
     .title {
-        background-color: $primaryColor;
-        color: $primaryFontColor;
-        font-size: $titleFontSize;
+        background-color: $default-background-color;
+        color: $default-font-color-with-background;
+        font-size: $default-title-font-size;
         width: 100%;
-        height: $titleFontSize + 12px;
-        line-height: $titleFontSize + 12px;
+        height: $default-title-font-size + 12px;
+        line-height: $default-title-font-size + 12px;
         text-indent: 10px;
         vertical-align: middle;
 
@@ -21,7 +21,7 @@ div.panel {
             float: right;
             margin-right: 10px;
             margin-top: 6px;
-            font-size: $titleFontSize;
+            font-size: $default-title-font-size;
             cursor: pointer;
 
             &:after {
@@ -31,8 +31,8 @@ div.panel {
     }
 
     .content {
-        font-size: $contentFontSize;
-        color: $normalFontCoor;
+        font-size: $default-font-size;
+        color: $default-font-color;
         margin: 0;
         padding: 10px;
         width: 100%;
