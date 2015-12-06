@@ -22,11 +22,7 @@ var config = {
         bundle:[
             './src/js/index.js',
             'font-awesome-webpack!./font-awesome.config.js'
-        ] ,
-        html5shiv: './node_modules/html5shiv/src/html5shiv.js',
-        'html5shiv-printshiv': './node_modules/html5shiv/src/html5shiv-printshiv.js',
-        'es5-shim': './node_modules/es5-shim/es5-shim.js',
-        'es5-sham': './node_modules/es5-shim/es5-sham.js'
+        ]
     },
     resolve: {
         alias: {}
