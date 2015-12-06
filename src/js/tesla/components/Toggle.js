@@ -14,6 +14,13 @@ let ToggleButton = React.createClass({
 		readonly: React.PropTypes.bool,
 		disabled: React.PropTypes.bool
 	},
+	getDefaultProps() {
+		return {
+			off: false,
+			readonly: false,
+			disabled: false
+		};
+	},
 	componentDidMount() {
 		if (!this.props.off) {
 			this.refs.toggle.setAttribute('checked', 'checked');

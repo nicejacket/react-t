@@ -7,6 +7,10 @@ import '../sass/hello.scss';
 import React from 'react';
 import Hello from './hello.js';
 
+let radioStyle = {
+	width: '400px'
+};
+
 let App = React.createClass({
 	getInitialState() {
 		return {
@@ -17,9 +21,11 @@ let App = React.createClass({
 		require.ensure([], () => {
 			let Panel = require('./tesla/components/Panel').default;
 			let Toggle = require('./tesla/components/Toggle').default;
+			let Radio = require('./tesla/components/Radio').default;
 			this.setState({
 				component: (<Panel title="this is a title" closeable>
 						<div>this is content!<Toggle name="ischecked"/></div>
+						<Radio label="radi button0" value="test" name="testradio" style={radioStyle}/>
 					</Panel>)
 			});
 		});

@@ -1,3 +1,7 @@
+$color-red: #e51c23;
+$color-green: #259b24;
+$color-gray: #CCC;
+
 $default-primariy-color: #0099ee;
 $default-disabled-color: #ccc;
 $default-background-color: $default-primariy-color;
@@ -6,10 +10,7 @@ $default-font-color-with-background: #FFF;
 $default-font-color: #000;
 $default-title-font-size: 16px;
 $default-font-size: 13px;
-
-$color-red:#e51c23;
-$color-green:#259b24;
-
+$default-disabled-font-color: $color-gray;
 
 //toggle variables
 $default-toggle-width: 70px;
@@ -21,3 +22,12 @@ $default-toggle-on-font-color: $default-font-color-with-background;
 $default-toggle-off-font-color: $default-font-color-with-background;
 $default-toggle-handle-size: $default-toggle-height - 2;
 $default-toggle-handle-color: #FFF;
+
+//radio variabels
+$default-radio-height: 50px;
+$default-radio-color: $default-font-color;
+$default-radio-font-size: $default-title-font-size;
+$default-radio-border-size: 1px;
+$default-radio-border-color: $default-border-color;
+$default-radio-icon-size: 30px;
+$default-radio-disabled-font-color: $default-disabled-font-color;
