@@ -4,6 +4,7 @@
  * @version 1.0.0
  */
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ModernizrWebpackPlugin = require('modernizr-webpack-plugin');
 var path = require('path');
 var webpack = require('webpack');
 var node_modules_dir = path.join(__dirname, 'node_modules');
@@ -12,6 +13,21 @@ var deps = [
     'react-router/dist/react-router.min.js',
     'moment/min/moment.min.js'
 ];
+var modernizrConfig = {
+    'feature-detects': [
+        'input',
+        'canvas',
+        'css/resize',
+        'css/checked'
+    ],
+    filename: 'modernizr.js',
+    minify: {
+        output: {
+            comments: true,
+            beautify: true
+        }
+    }
+}
 
 require('es6-promise').polyfill();
 
@@ -65,7 +81,8 @@ var config = {
                 warnings: false
             }
         }),
-        new webpack.optimize.CommonsChunkPlugin('common.js')
+        new webpack.optimize.CommonsChunkPlugin('common.js'),
+        new ModernizrWebpackPlugin(modernizrConfig)
     ],
     eslint: {  
         configFile: '.eslintrc'
