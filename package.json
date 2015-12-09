@@ -76,12 +76,15 @@
     "history": "^1.13.1",
     "html5shiv": "^3.7.3",
     "jquery": "^1.11.3",
+    "karma-sinon-chai": "^1.1.0",
     "lodash": "^3.10.1",
     "moment": "^2.10.6",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-router": "^1.0.0",
     "reflux": "^0.3.0",
-    "respond": "^0.9.0"
+    "respond": "^0.9.0",
+    "sinon": "^1.17.2",
+    "sinon-chai": "^2.8.0"
   }
 }
