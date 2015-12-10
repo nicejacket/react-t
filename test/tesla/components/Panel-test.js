@@ -5,6 +5,7 @@
  */
 
 import React from 'react';
+import ReactDOM from 'react-dom';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
 import Panel from '../../../src/js/tesla/components/Panel.js';
 
@@ -22,6 +23,13 @@ describe('Panel', () => {
 		let instance = ReactTestUtils.renderIntoDocument(
 			<Panel title="this is a title" closeable/>		
 		);
-		assert.ok(ReactTestUtils.findRenderedDOMComponentWithTag(instance, 'i'));
+
+		let close = ReactTestUtils.findRenderedDOMComponentWithTag(instance, 'i');
+
+		assert.ok(close);
+
+		ReactTestUtils.Simulate.click(ReactDOM.findDOMNode(close));
+
+		expect(ReactTestUtils.findRenderedDOMComponentWithTag(instance, 'span')).to.be.ok;
 	});
 });
