@@ -22,10 +22,14 @@ let App = React.createClass({
 			let Panel = require('./tesla/components/Panel').default;
 			let Toggle = require('./tesla/components/Toggle').default;
 			let Radio = require('./tesla/components/Radio').default;
+			let Checkbox = require('./tesla/components/Checkbox.js').default;
 			this.setState({
 				component: (<Panel title="this is a title" closeable>
 						<div>this is content!<Toggle name="ischecked"/></div>
 						<Radio label="radi button0" value="test" name="testradio" style={radioStyle}/>
+						<Checkbox label="checkbox 1" value="test" name="testcheckbox"/>
+						<Checkbox label="checkbox 2" value="test1" name="testcheckbox"/>
+						<Checkbox label="checkbox 3" value="test2" name="testcheckbox"/>
 					</Panel>)
 			});
 		});

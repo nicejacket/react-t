@@ -20,7 +20,9 @@ let Radio = React.createClass({
 	},
 	getDefaultProps() {
 		return {
-			width: '100%'
+			style: {
+				width: '100%'
+			}
 		};
 	},
 	componentDidMount() {
