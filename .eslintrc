@@ -26,6 +26,7 @@
     "no-console": 0,
     "no-this-before-super": 2,
     "babel/object-shorthand": 2,
+    "react/no-multi-comp": 0,
     "react/jsx-boolean-value": 2,
     "react/jsx-no-duplicate-props": 2,
     "react/sort-comp": 0,

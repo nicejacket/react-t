@@ -20,11 +20,14 @@ let Checkbox = React.createClass({
 	},
 	getDefaultProps() {
 		return {
-			width: '100%'
+			style: {
+				width: '100%',
+				height: '50px'
+			}
 		};
 	},
 	render() {
-		return (<label className="checkbox">
+		return (<label className="checkbox" style={this.props.style}>
 				<input type="checkbox" name={this.props.name} value={this.props.value}/>
 				<i className="fa fa-circle-thin"/>
 				<i className="fa fa-check"/>
