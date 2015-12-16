@@ -8,7 +8,8 @@ gulp.task('copy', function() {
 	    	'node_modules/html5shiv/src/html5shiv.js',
 	    	'node_modules/html5shiv/src/html5shiv-printshiv.js',
 	    	'node_modules/es5-shim/es5-shim.js',
-	    	'node_modules/es5-shim/es5-sham.js'
+	    	'node_modules/es5-shim/es5-sham.js',
+            'src/css/normalize.css'
     	]).pipe(gulp.dest('build'));
 });
 gulp.task('es3ify', function () {
