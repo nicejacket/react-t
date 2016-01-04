@@ -38,7 +38,7 @@ let App = React.createClass({
 	render() {
 		return (
 			<Side ref="side" style={{top: '100px'}}>
-				<Left style={{background: '#000'}}>
+				<Left style={{background: '#000', color: '#FFF'}}>
 					test
 				</Left>
 				<Right>

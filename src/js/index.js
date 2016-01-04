@@ -5,7 +5,7 @@
  */
 
 import Hello from './hello';
-import App from './app.js';
+import App from './App.js';
 import React from 'react';
 import {Router, Route} from 'react-router';
 

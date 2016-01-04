@@ -9,7 +9,7 @@ require('es6-promise').polyfill();
 var config = {
     entry: {
         bundle:[
-            './src/js/index.js',
+            './src/js/Index.js',
             'font-awesome-webpack!./font-awesome.config.js'
         ] 
     },

@@ -36,7 +36,7 @@ var config = {
         'webpack-dev-server': 'webpack-dev-server/client?http://0.0.0.0:8080',
         'dev-server': 'webpack/hot/dev-server',
         bundle:[
-            './src/js/index.js',
+            './src/js/Index.js',
             'font-awesome-webpack!./font-awesome.config.js'
         ]
     },

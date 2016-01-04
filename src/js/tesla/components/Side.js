@@ -42,7 +42,7 @@ class Left extends Component {
 
 class Right extends Component {
 	render() {
-		return (<div className="side-right">
+		return (<div className="side-right" style={this.props.style}>
 				{this.props.children}
 			</div>);
 	}
