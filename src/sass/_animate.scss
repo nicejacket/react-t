@@ -1,0 +1,7 @@
+@import 'transition';
+
+@mixin move_to_left($duration: 0.2s){
+	@include transition-property(left);
+	@include transition-duration($duration);
+	@include transition-timing-function(ease-in-out);
+}
