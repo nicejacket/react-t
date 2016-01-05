@@ -4,25 +4,26 @@
  * @version 1.0.0
  */
 
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 
-let Panel = React.createClass({
-	propTypes: {
-		title: React.PropTypes.string,
-		closeable: React.PropTypes.bool
-	},
-	getInitialState() {
-		return {
-			showPanel: true
+export default class Panel extends Component {
+	constructor() {
+		super();
+
+		this.state = {
+			show: true
 		};
-	},
+		this.closePanel = this.closePanel.bind(this);
+	}
+
 	closePanel() {
-		this.setState({showPanel: false});
-	},
+		this.setState({show: false});
+	}
+
 	render() {
 		let _view;
 
-		if (this.state.showPanel) {
+		if (this.state.show) {
 			_view = (
 				<div className="panel">
 					<div className="title">
@@ -40,6 +41,9 @@ let Panel = React.createClass({
 
 		return _view;
 	}
-});
+}
 
-export default Panel;
+Panel.propTypes = {
+	title: PropTypes.string.isRequired,
+	closeable: PropTypes.bool
+};

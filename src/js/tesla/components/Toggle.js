@@ -4,22 +4,20 @@
  * @version 1.0.0
  */
 
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 
-let ToggleButton = React.createClass({
-	propTypes: {
-		name: React.PropTypes.string,
-		off: React.PropTypes.bool,
-		readonly: React.PropTypes.bool,
-		disabled: React.PropTypes.bool
-	},
-	getDefaultProps() {
-		return {
+export default class Toggle extends Component {
+	constructor() {
+		super();
+
+		this.defaultProps = {
 			off: false,
 			readonly: false,
 			disabled: false
 		};
-	},
+		this.changeInputValue = this.changeInputValue.bind(this);
+	}
+
 	componentDidMount() {
 		if (!this.props.off) {
 			this.refs.toggle.setAttribute('checked', 'checked');
@@ -29,10 +27,12 @@ let ToggleButton = React.createClass({
 		}
 
 		this.changeInputValue();
-	},
+	}
+
 	changeInputValue() {
 		this.refs.input.value = !!this.refs.toggle.checked;
-	},
+	}
+
 	render() {
 		return (<label className="toggle">
 				<input type="checkbox" ref="toggle" onChange={this.changeInputValue}/>
@@ -44,6 +44,11 @@ let ToggleButton = React.createClass({
 				<input type="hidden" ref="input" name={this.props.disabled ? '' : this.props.name} value="false"/>
 			</label>);
 	}
-});
+}
 
-export default ToggleButton;
+Toggle.propTypes = {
+	name: PropTypes.string,
+	off: PropTypes.bool,
+	readonly: PropTypes.bool,
+	disabled: PropTypes.bool
+};

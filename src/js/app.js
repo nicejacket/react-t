@@ -16,7 +16,7 @@ let App = React.createClass({
 		};
 	},
 	loadPanel() {
-		require.ensure([], () => {
+		require.ensure([], (require) => {
 			let Panel = require('./tesla/components/Panel').default;
 			let Toggle = require('./tesla/components/Toggle').default;
 			let Radio = require('./tesla/components/Radio').default;

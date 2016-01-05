@@ -28,7 +28,6 @@ class AccordionItem extends Component {
 
 	toggle() {
 		this.setState({open: !this.state.open});
-		console.log(this);
 	}
 
 	render() {

@@ -4,25 +4,13 @@
  * @version 1.0.0
  */
 
-import React from 'react';
+import React, { Component, PropTypes} from 'react';
 
-let Radio = React.createClass({
-	propTypes: {
-		name: React.PropTypes.string,
-		value: React.PropTypes.string,
-		label: React.PropTypes.string,
-		checked: React.PropTypes.bool,
-		readonly: React.PropTypes.bool,
-		disabled: React.PropTypes.bool,
-		style: React.PropTypes.object
-	},
-	getDefaultProps() {
-		return {
-			style: {
-				width: '100%'
-			}
-		};
-	},
+export default class Radio extends Component {
+	constructor() {
+		super();
+	}
+
 	componentDidMount() {
 		if (this.props.checked) {
 			this.refs.radio.setAttribute('checked', 'checked');
@@ -34,15 +22,23 @@ let Radio = React.createClass({
 			this.refs.hidden.name = this.props.name;
 			this.refs.hidden.value = this.props.value;
 		}
-	},
+	}
+
 	render() {
 		return (<label className="radio" style={this.props.style}>
-				<input ref="radio" type="radio" name={this.props.name} value={this.props.value}/>
-				<span>{this.props.label}</span>
-				<i className="fa fa-check"/>
-				<input type="hidden" ref="hidden"/>
-			</label>);
+			<input ref="radio" type="radio" name={this.props.name} value={this.props.value}/>
+			<span>{this.props.label}</span>
+			<i className="fa fa-check"/>
+			<input type="hidden" ref="hidden"/>
+		</label>);
 	}
-});
+}
 
-export default Radio;
+Radio.propTypes = {
+	name: PropTypes.string.isRequired,
+	value: PropTypes.string.isRequired,
+	label: PropTypes.string.isRequired,
+	checked: PropTypes.bool,
+	readonly: PropTypes.bool,
+	disabled: PropTypes.bool
+};

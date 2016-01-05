@@ -22,7 +22,7 @@ describe('Radio', () => {
 
 	it('测试选中情况', () => {
 		let instance = ReactTestUtils.renderIntoDocument(
-			<Radio label="radio button" name="testradio" checked/>
+			<Radio label="radio button" name="testradio" checked value="test"/>
 		);
 
 		assert.equal(instance.refs.radio.name, 'testradio');

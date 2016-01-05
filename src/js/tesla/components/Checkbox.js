@@ -4,26 +4,13 @@
  * @version 1.0.0
  */
 
-import React from 'react';
+import React, { Component, PropTypes} from 'react';
 
-let Checkbox = React.createClass({
-	propTypes: {
-		name: React.PropTypes.string,
-		value: React.PropTypes.string,
-		label: React.PropTypes.string,
-		checked: React.PropTypes.bool,
-		readonly: React.PropTypes.bool,
-		disabled: React.PropTypes.bool,
-		style: React.PropTypes.object
-	},
-	getDefaultProps() {
-		return {
-			style: {
-				width: '100%',
-				height: '50px'
-			}
-		};
-	},
+export default class Checkbox extends Component {
+	constructor() {
+		super();
+	}
+
 	render() {
 		return (<label className="checkbox" style={this.props.style}>
 				<input type="checkbox" name={this.props.name} value={this.props.value}/>
@@ -32,6 +19,13 @@ let Checkbox = React.createClass({
 				<span>{this.props.label}</span>
 			</label>);
 	}
-});
+}
 
-export default Checkbox;
+Checkbox.propTypes = {
+	name: PropTypes.string.isRequired,
+	value: PropTypes.string.isRequired,
+	label: PropTypes.string.isRequired,
+	checked: PropTypes.bool,
+	readonly: PropTypes.bool,
+	disabled: PropTypes.bool
+};

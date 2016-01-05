@@ -4,9 +4,9 @@
  * @version 1.0.0
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 
-export class Tab extends React.Component{
+export default class Tab extends Component{
 	render() {
 		<ul class="tab">
 			
