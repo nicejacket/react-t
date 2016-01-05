@@ -5,12 +5,16 @@ $color-gray: #CCC;
 $default-primariy-color: #0099ee;
 $default-disabled-color: #ccc;
 $default-background-color: $default-primariy-color;
-$default-border-color: #DDD;
+$default-border-color: #EDEDED;
 $default-font-color-with-background: #FFF;
 $default-font-color: #000;
 $default-title-font-size: 16px;
 $default-font-size: 13px;
 $default-disabled-font-color: $color-gray;
+
+//基本的html组件
+$default-link-color: $default-primariy-color;
+$default-link-hover-color: $default-font-color;
 
 //toggle variables
 $default-toggle-width: 70px;
@@ -41,4 +45,6 @@ $default-checkbox-border-color: $default-border-color;
 $default-checkbox-icon-circle-size: 24px;
 $default-checkbox-icon-check-size: 20px;
 
-$default-accordion-open-color: $default-primariy-color;
+$default-accordion-open-color: $default-font-color;
+$default-accordion-close-color: $default-primariy-color;
+$default-accordion-border-color: $default-border-color;

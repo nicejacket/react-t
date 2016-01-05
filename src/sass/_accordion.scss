@@ -3,7 +3,8 @@
 @import 'transition';
 
 .accordion {
-	padding-left: 10px;
+	padding: 0;
+	margin: 0;
 }
 
 .accordion dl {
@@ -14,6 +15,8 @@
 	dl {
 		& {
 			dt {
+				margin: 0;
+				padding-left: 10px;
 				color: $default-accordion-open-color;
 			}
 
@@ -25,17 +28,25 @@
 			}
 
 			dd {
-				margin-left: 20px;
+				margin: 0;
+				padding: 0px;
 				overflow: hidden;
 				@include transition-property(all);
 				@include transition-duration(0.2s);
 				@include transition-timing-function(ease-in-out);	
 			}
+
+			dd a {
+				padding: 10px 20px;
+				display: block;
+				width: 100%;
+				border-bottom: 1px solid $default-accordion-border-color;
+			}
 		}
 
 		&.close {
 			dt {
-				color: #000;
+				color: $default-accordion-close-color;
 			}
 
 			i {

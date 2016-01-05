@@ -47,7 +47,7 @@ let App = React.createClass({
 						<Accordion>
 							{[{title: 'title1', content: 'content1'}, {title: 'title2', content: 'content2'}].map((item, index) => {
 								return (<AccordionItem title={item.title} key={index}>
-									{item.content}
+									<a href="#">{item.content}</a>
 								</AccordionItem>);
 							})}
 						</Accordion>

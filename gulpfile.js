@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var es3ify = require('gulp-es3ify');
 var sass = require('gulp-sass');
+var minifyCSS = require('gulp-minify-css');
  
 gulp.task('copy-html', function() {
     return gulp.src(['src/index.html']).pipe(gulp.dest('dist'));
@@ -38,6 +39,7 @@ gulp.task('es3ify', function () {
 gulp.task('sass', function () {
   gulp.src('src/sass/style.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(minifyCSS())
     .pipe(gulp.dest('./dist/css'));
 });
 

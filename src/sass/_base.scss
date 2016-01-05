@@ -1,0 +1,13 @@
+@import 'variables';
+
+a {
+	color: $default-link-color;
+	text-decoration: none;
+}
+
+a {
+	&:hover {
+		text-decoration: underline;
+		color: $default-link-hover-color;
+	}
+}
