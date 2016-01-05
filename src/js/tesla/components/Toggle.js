@@ -5,7 +5,6 @@
  */
 
 import React from 'react';
-import '../../../sass/_toggle.scss';
 
 let ToggleButton = React.createClass({
 	propTypes: {

@@ -5,8 +5,6 @@
  */
 
 import React from 'react';
-import 'font-awesome-webpack';
-import '../../../sass/_checkbox.scss';
 
 let Checkbox = React.createClass({
 	propTypes: {

@@ -1,0 +1,50 @@
+@import 'variables';
+@import 'animate';
+@import 'transition';
+
+.accordion {
+	padding-left: 10px;
+}
+
+.accordion dl {
+	cursor: pointer;
+}
+
+.accordion {
+	dl {
+		& {
+			dt {
+				color: $default-accordion-open-color;
+			}
+
+			i {
+				margin-right: 5px;
+				@include transition-property(all);
+				@include transition-duration(0.2s);
+				@include transition-timing-function(ease-in-out);
+			}
+
+			dd {
+				margin-left: 20px;
+				overflow: hidden;
+				@include transition-property(all);
+				@include transition-duration(0.2s);
+				@include transition-timing-function(ease-in-out);	
+			}
+		}
+
+		&.close {
+			dt {
+				color: #000;
+			}
+
+			i {
+				transform: rotate(-90deg);
+			}
+
+			dd {
+				height: 0;
+			}
+		}
+	}
+}

@@ -6,7 +6,6 @@
 
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import '../../../sass/_side.scss';
 
 export default class Side extends Component {
 	constructor() {
@@ -47,8 +46,5 @@ class Right extends Component {
 			</div>);
 	}
 }
-
-Side.Left = Left;
-Side.Right = Right;
 
 export { Left, Right };

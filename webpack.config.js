@@ -20,7 +20,7 @@ var modernizrConfig = {
         'css/resize',
         'css/checked'
     ],
-    filename: 'modernizr.js',
+    filename: 'js/modernizr.js',
     minify: {
         output: {
             comments: true,
@@ -36,16 +36,16 @@ var config = {
         'webpack-dev-server': 'webpack-dev-server/client?http://0.0.0.0:8080',
         'dev-server': 'webpack/hot/dev-server',
         bundle:[
-            './src/js/Index.js',
-            'font-awesome-webpack!./font-awesome.config.js'
+            './src/js/Index.js'
+            //'font-awesome-webpack!./font-awesome.config.js'
         ]
     },
     resolve: {
         alias: {}
     },
     output: {
-        path: 'build',
-        filename: '[name].js'
+        path: 'dist',
+        filename: 'js/[name].js'
     },
     module: {
         preLoaders: [{
@@ -73,7 +73,7 @@ var config = {
         noParse: []
     },
     plugins: [
-        new ExtractTextPlugin('style.css', {
+        new ExtractTextPlugin('css/bundle.css', {
             allChunks: true
         }),
         new webpack.optimize.UglifyJsPlugin({
@@ -81,7 +81,7 @@ var config = {
                 warnings: false
             }
         }),
-        new webpack.optimize.CommonsChunkPlugin('common.js'),
+        new webpack.optimize.CommonsChunkPlugin('js/common.js'),
         new ModernizrWebpackPlugin(modernizrConfig)
     ],
     eslint: {  

@@ -9,16 +9,16 @@ require('es6-promise').polyfill();
 var config = {
     entry: {
         bundle:[
-            './src/js/Index.js',
-            'font-awesome-webpack!./font-awesome.config.js'
+            './src/js/Index.js'
+            //'font-awesome-webpack!./font-awesome.config.js'
         ] 
     },
     resolve: {
         alias: {}
     },
     output: {
-        path: 'build',
-        filename: '[name].js'
+        path: 'dist',
+        filename: 'js/[name].js'
     },
     module: {
         preLoaders: [{

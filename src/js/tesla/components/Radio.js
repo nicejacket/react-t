@@ -5,8 +5,6 @@
  */
 
 import React from 'react';
-import 'font-awesome-webpack';
-import '../../../sass/_radio.scss';
 
 let Radio = React.createClass({
 	propTypes: {
