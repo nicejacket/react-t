@@ -14,7 +14,7 @@ $default-disabled-font-color: $color-gray;
 
 //基本的html组件
 $default-link-color: $default-primariy-color;
-$default-link-hover-color: $default-font-color;
+$default-link-hover-color: lighten($default-link-color, 20%);
 
 //toggle variables
 $default-toggle-width: 70px;

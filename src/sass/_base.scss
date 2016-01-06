@@ -5,9 +5,6 @@ a {
 	text-decoration: none;
 }
 
-a {
-	&:hover {
-		text-decoration: underline;
-		color: $default-link-hover-color;
-	}
+a:hover {
+	color: $default-link-hover-color;
 }
