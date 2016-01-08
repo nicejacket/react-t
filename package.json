@@ -4,7 +4,8 @@
   "description": "tesla react version",
   "main": "index.js",
   "scripts": {
-    "server": "webpack-dev-server --progress --colors --hot",
+    "start": "webpack-dev-server --progress --colors --hot",
+    "server": "node server.js",
     "build": "webpack --progress --profile --colors --display-error-details && gulp",
     "gulp": "gulp",
     "test": "karma start"
@@ -86,8 +87,13 @@
     "moment": "^2.10.6",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
+    "react-redux": "^4.0.6",
     "react-router": "^1.0.0",
-    "reflux": "^0.3.0",
+    "redux": "^3.0.5",
+    "redux-action-utils": "^2.0.0",
+    "redux-logger": "^2.3.1",
+    "redux-promise": "^0.5.0",
+    "redux-thunk": "^1.0.3",
     "respond": "^0.9.0"
   }
 }

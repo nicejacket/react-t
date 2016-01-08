@@ -1,0 +1,19 @@
+[{
+	"title": "用户管理",
+	"list": [{
+		"label": "用户列表",
+		"action": "USER_LIST"
+	}, {
+		"label": "增加用户",
+		"action": "USER_ADD"
+	}]
+}, {
+	"title": "角色管理",
+	"list": [{
+		"label": "角色列表",
+		"action": "ROLE_LIST"
+	}, {
+		"label": "增加角色",
+		"action": "ROLE_ADD"
+	}]
+}]

@@ -16,6 +16,10 @@ gulp.task('copy-js', function() {
         ]).pipe(gulp.dest('dist/js/lib'));
 });
 
+gulp.task('copy-json', function() {
+    return gulp.src('src/json/*').pipe(gulp.dest('dist/json'));
+});
+
 gulp.task('copy-css', function() {
     return gulp.src([
                 'src/css/normalize.css',
@@ -28,7 +32,7 @@ gulp.task('copy-fonts', function() {
             .pipe(gulp.dest('dist/fonts/'));
 });
 
-gulp.task('copy', ['copy-html', 'copy-js', 'copy-css', 'copy-fonts']);
+gulp.task('copy', ['copy-html', 'copy-js', 'copy-json', 'copy-css', 'copy-fonts']);
 
 gulp.task('es3ify', function () {
     return gulp.src('dist/*.js')

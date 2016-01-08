@@ -3,16 +3,22 @@
  * @date    2015-11-26 16:36:12
  * @version $Id$
  */
-import '../sass/hello.scss';
 import React from 'react';
-import Hello from './hello.js';
+import { connect } from 'react-redux';
 import Side, { Left, Right } from './tesla/components/Side.js';
-import Accordion, {AccordionItem} from './tesla/components/Accordion.js';
+import Accordion from './tesla/components/Accordion.js';
 
 let App = React.createClass({
+	propTypes: {
+		sys: React.PropTypes.shape({
+			menu: React.PropTypes.shape({
+				list: React.PropTypes.array
+			})
+		})
+	},
 	getInitialState() {
 		return {
-			component: <Hello/>
+			component: <div>test</div>
 		};
 	},
 	loadPanel() {
@@ -36,21 +42,18 @@ let App = React.createClass({
 	toggleSide() {
 		this.refs.side.toggle();
 	},
+	onAccordionItemClick(data) {
+		console.log(data);
+	},
 	render() {
 		return (
 			<div>
 				<div style={{borderBottom: '1px solid #CCC', height: '50px'}}>
-					top bar
+					top bar test
 				</div>
 				<Side ref="side" style={{top: '50px', bottom: '20px'}}>
 					<Left style={{borderRight: '1px solid #CCC'}}>
-						<Accordion>
-							{[{title: 'title1', content: 'content1'}, {title: 'title2', content: 'content2'}].map((item, index) => {
-								return (<AccordionItem title={item.title} key={index}>
-									<a href="#">{item.content}</a>
-								</AccordionItem>);
-							})}
-						</Accordion>
+						<Accordion data={this.props.sys.menu.list} onClick={this.onAccordionItemClick}/>
 					</Left>
 					<Right>
 						<div>
@@ -67,4 +70,4 @@ let App = React.createClass({
 	}
 });
 
-export default App;
+export default connect(state => state)(App);
