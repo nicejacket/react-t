@@ -6,6 +6,7 @@
 
 import App from './App.js';
 import React from 'react';
+import ReactDOM from 'react-dom';
 import {Router, Route} from 'react-router';
 import { createStore, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
@@ -28,7 +29,7 @@ const createStoreWithMiddleware = applyMiddleware(thunk, promise, logger)(create
 const store = createStoreWithMiddleware(entryReducer, initialState);
 store.dispatch(getMenuList('U000000000001'));
 
-React.render((
+ReactDOM.render((
 	<Provider store={store}>
 		<Router>
 			<Route path="/" component={App} />

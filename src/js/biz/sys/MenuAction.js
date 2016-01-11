@@ -5,11 +5,11 @@
  */
 
 import { SYS_MENU_LIST } from 'ActionTypes';
-import tesla from 'tesla';
+import $ts from 'tesla';
 
 export function getMenuList(userId) {
 	return (dispatch) => {
-		return tesla.getJSON('json/sys-menu-list.json').then(json => {
+		return $ts.getJSON('json/sys-menu-list.json').then(json => {
 			dispatch({
 				type: SYS_MENU_LIST,
 				list: json,
