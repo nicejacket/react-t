@@ -3,18 +3,19 @@
  * @date    2015-11-26 16:36:12
  * @version $Id$
  */
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Side, { Left, Right } from './tesla/components/Side.js';
 import Accordion from './tesla/components/Accordion.js';
 
 let App = React.createClass({
 	propTypes: {
-		sys: React.PropTypes.shape({
-			menu: React.PropTypes.shape({
-				list: React.PropTypes.array
+		sys: PropTypes.shape({
+			menu: PropTypes.shape({
+				list: PropTypes.array
 			})
-		})
+		}),
+		dispatch: PropTypes.func
 	},
 	getInitialState() {
 		return {
@@ -43,7 +44,8 @@ let App = React.createClass({
 		this.refs.side.toggle();
 	},
 	onAccordionItemClick(data) {
-		console.log(data);
+		let { dispatch } = this.props;
+		dispatch({type: data.action});
 	},
 	render() {
 		return (

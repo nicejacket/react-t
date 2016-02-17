@@ -50,11 +50,6 @@ var config = {
         noParse: []
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        }),
         new webpack.optimize.CommonsChunkPlugin('js/common.js'),
         new webpack.HotModuleReplacementPlugin()
     ],
